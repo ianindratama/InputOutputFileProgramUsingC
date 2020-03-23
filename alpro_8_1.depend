@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1584957843 source:d:\koding\tutorial c\tutorial_kedua\alpro_8_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
