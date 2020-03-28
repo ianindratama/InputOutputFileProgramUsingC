@@ -39,10 +39,12 @@ int main()
         switch(menu){
 
         case 1:
+            bukaFile = fopen("data_toko.txt", "a+");
             printf("Masukkan jumlah barang yang ingin diinput:");
             scanf("%d", &jumlah);
             fflush(stdin);
             for(int i = 0; i<jumlah; i++){
+                printf("\n");
                 printf("Masukkan nama barang :");
                 gets(nama_barang);
                 printf("Masukkan jumlah barang :");
@@ -57,6 +59,8 @@ int main()
                     printf("data berhasil dimasukkan ke file");
                 }
             }
+            fclose(bukaFile);
+            bukaFile = NULL;
             printf("\nIngin kembali ke menu utama ?\n");
             printf("1.ya\t2.tidak\n");
             scanf("%d", &menu);
@@ -67,6 +71,7 @@ int main()
             }
             break;
         case 2:
+            bukaFile = fopen("data_toko.txt", "a+");
             while( (cek_jumlah_barang_yang_ada_di_file = fgetc(bukaFile)) != EOF ){
                 if(cek_jumlah_barang_yang_ada_di_file == '\n'){
                     jumlah_barang_yang_ada_di_file++;
@@ -83,6 +88,8 @@ int main()
 
                 printf("%s\t\t%d\t\t%d\t\t\n", nama_barang_file[i], jumlah_barang_file[i], harga_barang_file[i]);
             }
+            fclose(bukaFile);
+            bukaFile = NULL;
             printf("\nIngin kembali ke menu utama ?\n");
             printf("1.ya\t2.tidak\n");
             scanf("%d", &menu);
@@ -95,8 +102,6 @@ int main()
 
         case 3:
             keluar:
-            fclose(bukaFile);
-            bukaFile = NULL;
             printf("\nterima kasih");
             exit(0);
             break;
