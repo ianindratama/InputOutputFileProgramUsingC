@@ -51,12 +51,19 @@ int main()
                 scanf("%d", &harga_barang);
                 fflush(stdin);
                 fputc('\n', bukaFile);
-                fprintf(bukaFile, "%s %d %d", nama_barang, jumlah_barang, harga_barang);
                 if((fprintf(bukaFile, "%s %d %d", nama_barang, jumlah_barang, harga_barang)) < 0){
                     printf("data gagal dimaksukkan ke file");
                 }else{
                     printf("data berhasil dimasukkan ke file");
                 }
+            }
+            printf("\nIngin kembali ke menu utama ?\n");
+            printf("1.ya\t2.tidak\n");
+            scanf("%d", &menu);
+            if(menu == 1){
+                goto menuutama;
+            }else if(menu == 2){
+                goto keluar;
             }
             break;
         case 2:
@@ -84,7 +91,6 @@ int main()
             }else if(menu == 2){
                 goto keluar;
             }
-
             break;
 
         case 3:
