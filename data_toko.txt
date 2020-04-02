@@ -3,3 +3,4 @@ telor 20 2500
 mie 30 2500
 kecap 15 1500
 tissue 25 15000
+sapu 5 10000
